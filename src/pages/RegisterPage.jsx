@@ -101,6 +101,16 @@ export const RegisterPage = () => {
                         {/* Add options for countries here */}
                     </select>
                     <label htmlFor='country'>País:</label>
+                    <option value="es">España</option>
+                    <option value="it">Italia</option>
+                    <option value="fr">Francia</option>
+                    <option value="mx">Mexico</option>
+	               <option value="CL">Chile</option>
+		         <option value="CO">Colombia</option>
+                 <option value="AR">Argentina</option>
+                </select>
+
+
                 </div>
 
                 <button>Registrarse</button>
