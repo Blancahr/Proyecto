@@ -3,74 +3,108 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from '../hook/useForm';
 
 export const RegisterPage = () => {
-	const navigate = useNavigate();
+    const navigate = useNavigate();
 
-	const { name, email, password, onInputChange, onResetForm } =
-		useForm({
-			name: '',
-			email: '',
-			password: '',
-		});
+    const { name, email, password, confirmPassword, country, onInputChange, onResetForm } =
+        useForm({
+            name: '',
+            email: '',
+            password: '',
+            confirmPassword: '',
+            country: '',
+        });
 
-	const onRegister = e => {
-		e.preventDefault();
+    const onRegister = e => {
+        e.preventDefault();
 
-		navigate('/dashboard', {
-			replace: true,
-			state: {
-				logged: true,
-				name,
-			},
-		});
+        // Add validation for password and confirmPassword here
 
-		onResetForm();
-	};
+        navigate('/dashboard', {
+            replace: true,
+            state: {
+                logged: true,
+                name,
+                email,
+                country,
+            },
+        });
 
-	return (
-		<div className='wrapper'>
-			<form onSubmit={onRegister}>
-				<h1>Registrarse</h1>
+        onResetForm();
+    };
 
-				<div className='input-group'>
-					<input
-						type='text'
-						name='name'
-						id='name'
-						value={name}
-						onChange={onInputChange}
-						required
-						autoComplete='off'
-					/>
-					<label htmlFor='name'>Nombre:</label>
-				</div>
+    return (
+        <div className='wrapper'>
+            <form onSubmit={onRegister}>
+                <h1>Registrarse</h1>
 
-				<div className='input-group'>
-					<input
-						type='email'
-						name='email'
-						id='email'
-						value={email}
-						onChange={onInputChange}
-						required
-						autoComplete='off'
-					/>
-					<label htmlFor='email'>Email:</label>
-				</div>
-				<div className='input-group'>
-					<input
-						type='password'
-						name='password'
-						id='password'
-						value={password}
-						onChange={onInputChange}
-						required
-						autoComplete='off'
-					/>
-					<label htmlFor='password'>Contraseña:</label>
-				</div>
+                <div className='input-group'>
+                    <input
+                        type='text'
+                        name='name'
+                        id='name'
+                        value={name}
+                        onChange={onInputChange}
+                        required
+                        autoComplete='off'
+                    />
+                    <label htmlFor='name'>Nombre:</label>
+                </div>
 
-				<button>Registrarse</button>
-			</form>
-		</div>
-	);
+                <div className='input-group'>
+                    <input
+                        type='email'
+                        name='email'
+                        id='email'
+                        value={email}
+                        onChange={onInputChange}
+                        required
+                        autoComplete='off'
+                    />
+                    <label htmlFor='email'>Email:</label>
+                </div>
+
+                <div className='input-group'>
+                    <input
+                        type='password'
+                        name='password'
+                        id='password'
+                        value={password}
+                        onChange={onInputChange}
+                        required
+                        autoComplete='off'
+                    />
+                    <label htmlFor='password'>Contraseña:</label>
+                </div>
+
+                <div className='input-group'>
+                    <input
+                        type='password'
+                        name='confirmPassword'
+                        id='confirmPassword'
+                        value={confirmPassword}
+                        onChange={onInputChange}
+                        required
+                        autoComplete='off'
+                    />
+                    <label htmlFor='confirmPassword'>Confirmar Contraseña:</label>
+                </div>
+
+                <div className='input-group'>
+                    <select
+                        name="country"
+                        id="country"
+                        value={country}
+                        onChange={onInputChange}
+                        required
+                    >
+                        <option value="">Selecciona un país</option>
+                        {/* Add options for countries here */}
+                    </select>
+                    <label htmlFor='country'>País:</label>
+                </div>
+
+                <button>Registrarse</button>
+            </form>
+        </div>
+    );
 };
