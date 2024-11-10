@@ -127,10 +127,7 @@ export const RegisterPage = () => {
                     <input type="text" {...register('telefono')} />
                 </div>       
 
-        {errors.edad && <p>La edad debe estar entre 18 y 65</p>}
-        {/* Mostrar otros mensajes de error según tu implementación */}
-
-        <button disabled={Object.keys(errors).length > 0}>Registrarse</button>
+        <button>Registrarse</button>
       </form>
     </div>
 
