@@ -98,9 +98,7 @@ export const RegisterPage = () => {
                         required
                     >
                         <option value="">Selecciona un país</option>
-                        {/* Add options for countries here */}
-                    </select>
-                    <label htmlFor='country'>País:</label>
+                              <label htmlFor='country'>País:</label>
                     <option value="es">España</option>
                     <option value="it">Italia</option>
                     <option value="fr">Francia</option>
@@ -108,7 +106,7 @@ export const RegisterPage = () => {
 	               <option value="CL">Chile</option>
 		         <option value="CO">Colombia</option>
                  <option value="AR">Argentina</option>
-                </select>
+                    </select>
 
 
                 </div>
