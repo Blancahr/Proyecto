@@ -69,6 +69,35 @@ export const RegisterPage = () => {
 					<label htmlFor='password'>Contraseña:</label>
 				</div>
 
+            <div>
+                <label>Edad</label>
+                <input type="text" {...register('edad', {
+                    validate: edadValidator
+                })} />
+                {errors.edad && <p>La edad debe estar entre 18 y 65</p>}
+            </div>
+            <div>
+                <label>País</label>
+                <select {...register('pais')}>
+                    <option value="es">España</option>
+                    <option value="it">Italia</option>
+                    <option value="fr">Francia</option>
+                    <option value="mx">Mexico</option>
+	           <option value="CL">Chile</option>
+		  <option value="AR">Argentina</option>
+		<option value="CO">Colombia</option>
+                </select>
+            </div>
+            <div>
+                <label>¿Incluir teléfono?</label>
+                <input type="checkbox" {...register('incluirTelefono')} />
+            </div>
+            {incluirTelefono && (
+                <div>
+                    <label>Teléfono</label>
+                    <input type="text" {...register('telefono')} />
+                </div>
+
 				<button>Registrarse</button>
 			</form>
 		</div>
