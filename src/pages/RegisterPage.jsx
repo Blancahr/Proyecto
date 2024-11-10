@@ -125,11 +125,7 @@ export const RegisterPage = () => {
                 <div>
                     <label>Teléfono</label>
                     <input type="text" {...register('telefono')} />
-                </div>
- return (
-    <div className="wrapper">
-      <form onSubmit={onRegister}>
-        {/* ... (campos del formulario) */}
+                </div>       
 
         {errors.edad && <p>La edad debe estar entre 18 y 65</p>}
         {/* Mostrar otros mensajes de error según tu implementación */}
