@@ -134,8 +134,5 @@ export const RegisterPage = () => {
       </form>
     </div>
 
-        <button disabled={Object.keys(errors).length > 0}>Registrarse</button>
-      </form>
-    </div>
   );
 };
